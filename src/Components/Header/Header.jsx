@@ -4,6 +4,7 @@ import "./Header.css";
 import { Link } from "react-router-dom";
 import Logo from "../Logo/Logo";
 import SearchBar from "../SearchBar/SearchBar";
+import SideMenu from "../SideMenu/SideMenu";
 
 export default function Header() {
   const [showSideBar, setShowSideBar] = useState(false);
@@ -25,7 +26,7 @@ export default function Header() {
         <aside
           className={`fixed ${
             showSideBar ? "left-0" : "left-[-100%]"
-          } transition-all top-0 h-full p-4 bg-gray-50`}>
+          } z-50  transition-all top-0 h-full p-4 pb-0 bg-gray-50 `}>
           <div className="flex justify-between mb-5">
             <Logo />
             <button onClick={() => setShowSideBar(false)} ref={closeSideBarBtn}>
@@ -33,7 +34,7 @@ export default function Header() {
             </button>
           </div>
           <SearchBar />
-          <ul className="my-3">
+          <ul className="my-3 space-y-3">
             <li>
               <Link to={"/"}>Home</Link>
             </li>
@@ -47,6 +48,7 @@ export default function Header() {
               <Link to={"/sign-up"}>Sign Up</Link>
             </li>
           </ul>
+          <SideMenu />
         </aside>
         <ul className="hidden lg:flex justify-between items-center gap-12">
           <li>
@@ -75,15 +77,15 @@ export default function Header() {
             </div>
 
             {/* user profile */}
-            <div
-              className="cursor-pointer relative"
-              onClick={() => setShowProfileOptions((prev) => !prev)}>
-              <div className="bg-[#DB4444] rounded-full w-8 h-8">
+            <div className="cursor-pointer relative">
+              <div
+                className="bg-[#DB4444] rounded-full w-8 h-8"
+                onClick={() => setShowProfileOptions((prev) => !prev)}>
                 <img src="src/assets/SVG/user.svg" alt="" />
               </div>
 
               <div
-                className={`absolute w-56 right-0 ${
+                className={`absolute z-50 w-56 right-0 ${
                   showProfileOptions
                     ? "visible opacity-100 top-[110%]"
                     : "invisible opacity-0 top-[130%]"

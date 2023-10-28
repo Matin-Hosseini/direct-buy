@@ -12,7 +12,7 @@ export default function Product({ liked, isNew }) {
         </Link>
         <div
           className={`absolute right-3 top-3 bg-white w-8 h-8 flex items-center justify-center rounded-full cursor-pointer text-lg ${
-            liked && "bg-red-500 text-white lg:opacity-100"
+            liked && "bg-red-500 text-black lg:opacity-100"
           } hover:bg-red-500 hover:text-white transition-all lg:opacity-0 group-hover:opacity-100`}>
           <i class="bx bx-heart"></i>
         </div>

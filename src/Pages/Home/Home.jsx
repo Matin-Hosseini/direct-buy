@@ -6,6 +6,7 @@ import SectionHeader from "../../Components/SectionHeader/SectionHeader";
 import CategoriesDiscount from "../../Components/CategoriesDiscount/CategoriesDiscont";
 import Categories from "../../Components/Categories/Categories";
 import FlashSales from "../../Components/FlashSales/FlashSales";
+import NewArrivals from "../../Components/NewArrivals/NewArrivals";
 
 const categories = [
   { id: 1, name: "Phones", icon: "" },
@@ -25,17 +26,7 @@ export default function Home() {
         <CategoriesDiscount />
         <Categories />
       </div>
-
-      <div className="container">
-        <div className="grid grid-cols-4 grid-rows-2 gap-5">
-          <div className="bg-slate-400 col-span-2 row-span-2 "></div>
-          <div className="bg-slate-400 col-span-2 "></div>
-          <div className="bg-slate-400 h-4"></div>
-          <div className="bg-slate-400 "></div>
-        </div>
-      </div>
-
-     
+      <NewArrivals />
     </div>
   );
 }

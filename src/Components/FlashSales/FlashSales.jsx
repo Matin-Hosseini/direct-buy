@@ -3,7 +3,7 @@ import Product from "../Product/Product";
 
 export default function FlashSales() {
   return (
-    <div>
+    <div className="hidden">
       <div className="container">
         <SectionHeader
           title={"This Month"}
